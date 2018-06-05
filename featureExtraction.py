@@ -34,6 +34,7 @@ def get_adj_phrase(token, token_text):
 def get_root_phrase(token, keywords):
     for child in token.children:
         if child.dep_ == "acomp" or child.dep_ == "xcomp" or child.dep_ == "ccomp":
+            # keywords.append(child.text)
             keywords.append(child.lemma_)
     return keywords
 
@@ -43,9 +44,11 @@ def get_noun_chunk(sent, en_doc, keywords):
     for token in sent:
         if token.tag_ == "NN" or token.tag_ == "NNP" or token.tag_ == "NNPS" or token.tag_ == "NNS":
             if token.dep_ != "compound":
+                print("notcompund: ", token.text)
                 token_text = get_compound_nouns(en_doc, token, token.text)
                 token_text = get_adj_phrase(token, token_text)
                 keywords.append(token_text)
+
 
         if token.dep_ == "nummod" or token.tag_ == "CD":
             token_text = token.text
@@ -60,6 +63,8 @@ def get_noun_chunk(sent, en_doc, keywords):
         if token.dep_ == "ROOT":
             root = token.lemma_
             keywords = get_root_phrase(token, keywords)
+            if token.text != token.lemma_:
+                keywords.append(token.text)
 
     return root, keywords
 
