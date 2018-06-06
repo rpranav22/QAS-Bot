@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9604563-6d93-4724-be51-1932fa0fb41d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/featureExtraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/featureExtraction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_classification.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_classification.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="model_classification.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model_classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="375">
+              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -38,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="featureExtraction.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="featureExtraction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/featureExtraction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="285">
               <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -77,10 +76,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model_classification.py" />
         <option value="$PROJECT_DIR$/docScorer.py" />
         <option value="$PROJECT_DIR$/Docs/context.txt" />
         <option value="$PROJECT_DIR$/featureExtraction.py" />
+        <option value="$PROJECT_DIR$/model_classification.py" />
       </list>
     </option>
   </component>
@@ -205,16 +204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model_classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Docs/context.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -227,10 +216,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/featureExtraction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="285">
           <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/sklearn/linear_model/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="323" selection-start-line="323" selection-end-line="323" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

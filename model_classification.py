@@ -2,6 +2,7 @@ from sklearn import datasets
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import LinearSVC
+import _pickle as cPickle
 from sklearn.externals import joblib
 from scipy.sparse import csr_matrix
 import pandas
@@ -21,6 +22,7 @@ def transform_data_matrix(X_train, X_predict):
     X_trans_columns = list(set(X_train_columns + X_predict_columns))
     # print(X_trans_columns, len(X_trans_columns))
 
+    '''
     trans_data_train = {}
 
     for col in X_trans_columns:
@@ -32,6 +34,11 @@ def transform_data_matrix(X_train, X_predict):
     XT_train = pandas.DataFrame(trans_data_train)
     XT_train = csr_matrix(XT_train)
     # getDataInfo(XT_train)
+    
+    # The above set of lines need to activated when you need to train 
+    '''
+    XT_train = None
+
 
     trans_data_predict = {}
 
@@ -51,7 +58,19 @@ def transform_data_matrix(X_train, X_predict):
 def SVM(X_train, y, X_predict):
     lin_clf = LinearSVC()
     lin_clf.fit(X_train, y)
+    with open('LSVC.pkl', 'wb') as fid:
+        cPickle.dump(lin_clf, fid)
+    # with open('LSVC.pkl', 'rb') as fid:
+    #     lin_clf = cPickle.load(fid)
     print("Model score: {0}".format(lin_clf.score(X_train, y)))
+    # joblib.dump(lin_clf, 'lsvc.pkl')
+    prediction = lin_clf.predict(X_predict)
+    return prediction
+
+def trainedSVM(X_predict):
+    with open('LSVC.pkl', 'rb') as fid:
+        lin_clf = cPickle.load(fid)
+    # print("Model score: {0}".format(lin_clf.score(X_train, y)))
     # joblib.dump(lin_clf, 'lsvc.pkl')
     prediction = lin_clf.predict(X_predict)
     return prediction
@@ -95,9 +114,14 @@ def classifyQuestion(doc):
     question_data = quesPredictionData(doc)
     X_predict = preProcess(question_data)
 
+    t1 = time()
     X_train, X_predict = transform_data_matrix(X_train, X_predict)
+    t2 = time()
+    print("transform data matrix time: ", t2-t1)
+    #
+    # return str(SVM(X_train, y, X_predict))
 
-    return str(SVM(X_train, y, X_predict))
+    return  str(trainedSVM(X_predict))
 
 
 def Main():
@@ -107,9 +131,8 @@ def Main():
 
 
 
-    # question = 'How many pounds in kgs?'
-
-    question = input("Question to be classified: ")
+    question = 'How many pounds in kgs?'
+    # question = input("Question to be classified: ")
     doc = nlp(u'' + question)
 
     # clf = joblib.load('lsvc.pkl')
