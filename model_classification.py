@@ -63,7 +63,6 @@ def SVM(X_train, y, X_predict):
     # with open('LSVC.pkl', 'rb') as fid:
     #     lin_clf = cPickle.load(fid)
     print("Model score: {0}".format(lin_clf.score(X_train, y)))
-    # joblib.dump(lin_clf, 'lsvc.pkl')
     prediction = lin_clf.predict(X_predict)
     return prediction
 
