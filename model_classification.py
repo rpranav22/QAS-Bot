@@ -6,7 +6,7 @@ import _pickle as cPickle
 from sklearn.externals import joblib
 from scipy.sparse import csr_matrix
 import pandas
-import spacy
+# import spacy
 import en_core_web_sm
 from time import time
 
